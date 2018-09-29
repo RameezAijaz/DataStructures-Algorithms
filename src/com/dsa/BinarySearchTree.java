@@ -2,11 +2,11 @@ package com.dsa;
 
 public class BinarySearchTree {
 
-    Node root;
+    BSTNode root;
 
-    public Node addNode(Node root, int value){
+    public BSTNode addNode(BSTNode root, int value){
         if(root==null){
-            return new Node(value);
+            return new BSTNode(value);
         }
 
         if(root.value<value){
@@ -18,14 +18,14 @@ public class BinarySearchTree {
 
         return root;
     }
-    public Node minNode(Node n){
-        Node tmp = n;
+    public BSTNode minNode(BSTNode n){
+        BSTNode tmp = n;
         while (tmp.left != null){
             tmp=tmp.left;
         }
         return tmp;
     }
-    public Node deleteNode(Node root, int value){
+    public BSTNode deleteNode(BSTNode root, int value){
         if(root == null){
             return root;
         }
@@ -44,7 +44,7 @@ public class BinarySearchTree {
                 return root.left;
             }
             else {
-                Node tmp = minNode(root.right);
+                BSTNode tmp = minNode(root.right);
                 root.value = tmp.value;
                 root.right = deleteNode(root.right,root.value);
 
@@ -54,7 +54,7 @@ public class BinarySearchTree {
 
     }
 
-    public void preOreder(Node n){
+    public void preOreder(BSTNode n){
         if(n==null)return;
         preOreder(n.left);
         System.out.println(n.value);
@@ -63,11 +63,10 @@ public class BinarySearchTree {
 
 }
 
-class Node{
+class BSTNode{
     int value;
-    Node left,right;
-
-    Node(int value){
+    BSTNode left,right;
+    BSTNode(int value){
         this.value=value;
     }
 }

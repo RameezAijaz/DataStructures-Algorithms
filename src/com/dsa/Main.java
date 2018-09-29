@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        System.out.println("_____BINARY_TREE______");
         BinarySearchTree binarySearchTree = new BinarySearchTree();
 
         binarySearchTree.root = binarySearchTree.addNode(binarySearchTree.root, 6);
@@ -13,7 +14,81 @@ public class Main {
         binarySearchTree.root = binarySearchTree.addNode(binarySearchTree.root, 1);
         binarySearchTree.preOreder(binarySearchTree.root);
         binarySearchTree.root = binarySearchTree.deleteNode(binarySearchTree.root, 6);
+
+
         binarySearchTree.preOreder(binarySearchTree.root);
+
+
+        System.out.println("_____LINKED_LIST______");
+        LinkedList linkedList = new LinkedList();
+        for(int i=0; i<10; i++){
+            linkedList.addNode(i);
+        }
+
+        System.out.println("__TRAVERSE_FORWARD____");
+        linkedList.traverseForward();
+        System.out.println("__DELETE_FROM_START____");
+        linkedList.deleteNodeFromStart();
+        System.out.println("__TRAVERSE_FORWARD____");
+        linkedList.traverseForward();
+
+        System.out.println("__TRAVERSE_BACKWARD____");
+        linkedList.traverseBackward();
+        System.out.println("__DELETE_FROM_END____");
+        linkedList.deleteNodeFromEnd();
+        System.out.println("__TRAVERSE_BACKWARD____");
+        linkedList.traverseBackward();
+
+
+        System.out.println("_____QUEUE______");
+        Queue queue = new Queue();
+        for(int i=0; i<10; i++){
+            queue.enQueue(i);
+        }
+
+        System.out.println("__DEQUEUE____");
+
+        for(int i=0; i<10; i++){
+            System.out.println(queue.deQueue());
+        }
+
+
+        System.out.println("_____STACK_____");
+        Stack stack = new Stack();
+        for(int i=0; i<10; i++){
+            stack.push(i);
+        }
+
+        System.out.println("__POP____");
+        for(int i=0; i<10; i++){
+            System.out.println(stack.pop());
+        }
+
+
+
+        System.out.println("_____MIN_HEAP______");
+        Heap heap = new Heap(10);
+
+        heap.addNode(9);
+        heap.addNode(8);
+        heap.addNode(7);
+        heap.addNode(6);
+        heap.addNode(5);
+        heap.addNode(4);
+        heap.addNode(3);
+        heap.addNode(2);
+        heap.addNode(1);
+        heap.addNode(0);
+
+
+        for(int i=0; i<10; i++){
+            heap.addNode(9-i);
+        }
+        for(int i=0; i<10; i++){
+            System.out.println(heap.getMin());
+            heap.deleteNode(0);
+        }
+
 
 
         System.out.println("_____BUBBLE__SORT______");
