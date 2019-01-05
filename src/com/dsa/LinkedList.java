@@ -6,7 +6,7 @@ public class LinkedList {
 
     public void addNode(int value){
 
-        if(this.head == null){
+        if(this.head == null || this.currentNode == null){
             this.head = new LLNode(value);
             this.currentNode = this.head;
         }
@@ -21,10 +21,12 @@ public class LinkedList {
 
     public void deleteNodeFromStart(){
         if(this.head == null){
+            this.currentNode = null;
             return;
         }
         if(this.head.next == null){
             this.head = null;
+            this.currentNode = null;
             return;
         }
 
@@ -33,10 +35,12 @@ public class LinkedList {
     }
     public void deleteNodeFromEnd(){
         if(this.currentNode == null) {
+            this.head = null;
             return;
         }
         if(this.currentNode.prev == null){
             this.currentNode = null;
+            this.head = null;
             return;
         }
         this.currentNode.prev.next = null;
